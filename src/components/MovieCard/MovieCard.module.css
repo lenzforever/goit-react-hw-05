@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  margin: 12px;
+  -webkit-box-shadow: -1px 3px 23px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 23px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 23px 0px rgba(0, 0, 0, 0.75);
+}
+.image {
+  height: 450px;
+  width: auto;
+}
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.list {
+  padding: 0;
+  margin: 0;
+}
