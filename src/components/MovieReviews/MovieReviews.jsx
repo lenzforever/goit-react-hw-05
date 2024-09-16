@@ -3,45 +3,42 @@ import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 import { fetchReviews } from "../../fetchAPi";
-
 import css from "./MovieReviews.module.css";
 
 const Reviews = () => {
   const { movieId } = useParams();
-  const [reviews, setReviews] = useState(null);
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const getReviews = async () => {
       try {
         const data = await fetchReviews(movieId);
-        setReviews(data.results);
+        setReviews(data.results || []); // Обрабатываем возможное отсутствие results
       } catch (error) {
-        toast.error("Something went wrong. Sorry! You can try again later", {
+        toast.error("Something went wrong. Please try again later.", {
           duration: 4000,
           position: "top-right",
         });
       }
     };
     getReviews();
-  }, []);
+  }, [movieId]); // Добавляем movieId в зависимости useEffect
 
   return (
-    <div>
+    <div className={css.reviewsContainer}>
       <h3 className={css.title}>Movie Reviews</h3>
-      <ul className={css.list}>
-        {(reviews !== null && reviews.length) === 0 && (
-          <p>This movie don't have any reviews</p>
-        )}
-        {reviews !== null &&
-          reviews.map((review) => {
-            return (
-              <li key={review.id}>
-                <h4 className={css.descr}>User: {review.author}</h4>
-                <p>{review.content}</p>
-              </li>
-            );
-          })}
-      </ul>
+      {reviews.length === 0 ? (
+        <p className={css.noReviews}>This movie doesn't have any reviews</p>
+      ) : (
+        <ul className={css.list}>
+          {reviews.map((review) => (
+            <li key={review.id} className={css.reviewItem}>
+              <h4 className={css.author}>User: {review.author}</h4>
+              <p className={css.content}>{review.content}</p>
+            </li>
+          ))}
+        </ul>
+      )}
       <Toaster />
     </div>
   );

@@ -6,12 +6,14 @@ import MovieInfo from "../components/MovieInfo/MovieInfo";
 
 const MovieDetailsPage = () => {
   const location = useLocation();
-  const backLink = useRef(location.state || "/movies");
+  const backLink = useRef(location.state?.from || "/movies"); // Используем оператор optional chaining
 
   return (
-    <div>
+    <div className="movie-details-page">
       <Link to={backLink.current}>
-        <button type="button">Go Back</button>
+        <button type="button" className="back-button">
+          Go Back
+        </button>
       </Link>
       <MovieCard />
       <MovieInfo />

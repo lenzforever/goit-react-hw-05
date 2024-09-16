@@ -3,45 +3,54 @@ import { useSearchParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
 import MoviesList from "../components/MoviesList/MoviesList";
-
 import { fetchMovies } from "../fetchAPi";
 
 const MoviesPage = () => {
-  const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const userRequest = searchParams.get("query") ?? "";
 
   useEffect(() => {
-    const getMovies = async () => {
+    const fetchMoviesData = async () => {
       if (!userRequest) return;
       try {
         const data = await fetchMovies(userRequest);
         setMovies(data);
       } catch (error) {
-        toast.error("Something went wrong. Sorry! You can try again later", {
+        toast.error("Something went wrong. Please try again later.", {
           duration: 4000,
           position: "top-right",
         });
       }
     };
-    getMovies();
+
+    fetchMoviesData();
   }, [userRequest]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const searchValue = e.target.userRequest.value.trim();
-    const params = searchValue !== "" ? { query: searchValue } : {};
-    setSearchParams(params);
+    setSearchParams(searchValue ? { query: searchValue } : {});
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="userRequest" />
-        <button type="submit">Search</button>
+    <div className="movies-page">
+      <form onSubmit={handleSubmit} className="search-form">
+        <input
+          type="text"
+          name="userRequest"
+          placeholder="Search for movies..."
+          className="search-input"
+        />
+        <button type="submit" className="search-button">
+          Search
+        </button>
       </form>
 
-      {movies !== null && <MoviesList movies={movies} />}
+      {movies.length > 0 && <MoviesList movies={movies} />}
+      {movies.length === 0 && userRequest && (
+        <p className="no-results">No movies found for "{userRequest}"</p>
+      )}
       <Toaster />
     </div>
   );

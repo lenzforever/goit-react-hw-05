@@ -4,13 +4,13 @@ import css from "./MovieInfo.module.css";
 const MovieInfo = () => {
   return (
     <div className={css.wrapper}>
-      <h3>Additional information</h3>
-      <ul>
-        <li>
-          <Link to="cast">Cast</Link>
+      <h3 className={css.title}>Additional Information</h3>
+      <ul className={css.list}>
+        <li className={css.item}>
+          <Link to="cast" className={css.link}>Cast</Link>
         </li>
-        <li>
-          <Link to="reviews">Reviews</Link>
+        <li className={css.item}>
+          <Link to="reviews" className={css.link}>Reviews</Link>
         </li>
       </ul>
       <Outlet />

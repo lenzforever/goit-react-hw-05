@@ -1,7 +1,39 @@
 .wrapper {
-  padding: 24px;
-  margin: 12px;
-  -webkit-box-shadow: -1px 3px 23px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 3px 23px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 3px 23px 0px rgba(0, 0, 0, 0.75);
+  padding: 16px;
+  background-color: #f9f9f9;
+  /* Легкий фон для выделения блока */
+  border-radius: 8px;
+  /* Закругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Легкая тень */
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  margin-bottom: 8px;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  /* Цвет ссылки по умолчанию */
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: rgb(255, 74, 102);
+  /* Цвет при наведении */
 }

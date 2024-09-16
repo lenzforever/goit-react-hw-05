@@ -1,18 +1,57 @@
+.container {
+  padding: 16px;
+}
+
 .title {
-  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.noCast {
+  font-size: 18px;
+  color: #666;
 }
 
 .list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
+  gap: 16px;
+  /* Добавляем промежуток между элементами */
 }
+
 .listItem {
-  width: 160px;
+  width: 150px;
+  /* Устанавливаем фиксированную ширину для элементов списка */
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  /* Фон для элементов списка */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Легкая тень */
+  padding: 8px;
 }
 
 .actorPhoto {
-  height: 240px;
-  width: auto;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  /* Картинка заполняет контейнер */
+  border-bottom: 1px solid #e0e0e0;
+  /* Граница под картинкой */
+}
+
+.actorName {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 8px 0 4px;
+}
+
+.actorRole {
+  font-size: 16px;
+  color: #333;
 }

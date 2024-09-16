@@ -1,4 +1,5 @@
 import { ColorRing } from "react-loader-spinner";
+
 const Loader = () => {
   return (
     <ColorRing
@@ -7,10 +8,11 @@ const Loader = () => {
       width="80"
       ariaLabel="color-ring-loading"
       wrapperStyle={{
-        display: "block",
-        margin: "auto",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh", // Центрирование по вертикали
       }}
-      wrapperClass="color-ring-wrapper"
       colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
     />
   );

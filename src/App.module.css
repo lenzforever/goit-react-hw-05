@@ -1,16 +1,25 @@
 .headerNav {
-  padding: 24px;
-  -webkit-box-shadow: -1px -4px 18px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px -4px 18px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px -4px 18px 0px rgba(0, 0, 0, 0.75);
-  margin-bottom: 24px;
+  padding: 20px 30px;
+  /* немного уменьшил отступы для более компактного вида */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  /* мягкая тень для более современного вида */
+  margin-bottom: 20px;
+  /* уменьшил отступ снизу */
+  background-color: #ffffff;
+  /* добавил фоновый цвет для контраста */
+  border-bottom: 1px solid #e0e0e0;
+  /* добавил тонкую границу снизу */
 }
 
 .navigation {
   display: flex;
-  gap: 24px;
+  gap: 20px;
+  /* уменьшил промежуток между элементами */
 }
 
 .active {
-  color: rgb(255, 74, 102);
+  color: #ff4a66;
+  /* заменил цвет на более мягкий оттенок розового */
+  font-weight: bold;
+  /* добавил жирное начертание для выделения активной ссылки */
 }
