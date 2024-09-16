@@ -1,30 +1,22 @@
 a {
   font-weight: 500;
   color: #444444;
-  /* заменил inherit на более тёмный оттенок серого */
   text-decoration: none;
-  /* убрал inherit для большей чёткости */
   transition: color 0.3s ease, text-decoration 0.3s ease;
-  /* сделал переход более плавным */
 }
 
 a:hover {
   color: rgb(200, 200, 200);
-  /* заменил на светло-серый для большей гармонии с серым стилем */
   text-decoration: underline;
-  /* добавил подчеркивание при наведении */
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  /* изменил шрифт для более современного вида */
   font-size: 18px;
   background-color: #f0f0f0;
-  /* добавил светлый серый фон */
   color: #333333;
-  /* тёмный цвет текста */
 }
 
 ul {
@@ -44,50 +36,39 @@ p {
 h1 {
   text-align: center;
   font-size: 2.5rem;
-  /* увеличил размер заголовка для выразительности */
   color: #333333;
-  /* чуть более светлый цвет */
 }
 
 button {
   margin-left: 12px;
   border-radius: 10px;
-  /* сделал углы более округлыми */
   padding: 14px 28px;
-  /* добавил немного больше пространства */
   border: none;
   font-size: 16px;
   font-weight: 500;
   font-family: inherit;
   background-color: #555555;
-  /* нейтральный серый цвет для кнопки */
   color: white;
   cursor: pointer;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  /* сделал тень более мягкой */
   transition: all 0.3s ease;
 }
 
 button:focus,
 button:hover {
   background-color: #333333;
-  /* тёмно-серый при наведении */
   color: #dddddd;
-  /* светло-серый текст */
 }
 
 input {
   margin-left: 12px;
   padding: 12px;
   border: 1px solid #888888;
-  /* заменил яркий цвет границы на серый */
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  /* сделал тень более мягкой и нейтральной */
   border-radius: 8px;
   outline: none;
   width: 240px;
   font-size: 16px;
   background-color: #fafafa;
-  /* светло-серый фон для инпута */
   color: #333333;
 }

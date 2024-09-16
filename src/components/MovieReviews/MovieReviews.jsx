@@ -13,7 +13,7 @@ const Reviews = () => {
     const getReviews = async () => {
       try {
         const data = await fetchReviews(movieId);
-        setReviews(data.results || []); // Обрабатываем возможное отсутствие results
+        setReviews(data.results || []); 
       } catch (error) {
         toast.error("Something went wrong. Please try again later.", {
           duration: 4000,
@@ -22,7 +22,7 @@ const Reviews = () => {
       }
     };
     getReviews();
-  }, [movieId]); // Добавляем movieId в зависимости useEffect
+  }, [movieId]); 
 
   return (
     <div className={css.reviewsContainer}>

@@ -6,7 +6,7 @@ import MovieInfo from "../components/MovieInfo/MovieInfo";
 
 const MovieDetailsPage = () => {
   const location = useLocation();
-  const backLink = useRef(location.state?.from || "/movies"); // Используем оператор optional chaining
+  const backLink = useRef(location.state?.from || "/movies"); 
 
   return (
     <div className="movie-details-page">

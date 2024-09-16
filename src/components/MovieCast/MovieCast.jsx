@@ -13,7 +13,7 @@ const MovieCast = () => {
     const getCast = async () => {
       try {
         const data = await fetchCast(movieId);
-        setCast(data.cast || []); // Обрабатываем возможное отсутствие cast
+        setCast(data.cast || []); 
       } catch (error) {
         toast.error("Something went wrong. Please try again later.", {
           duration: 4000,
@@ -22,7 +22,7 @@ const MovieCast = () => {
       }
     };
     getCast();
-  }, [movieId]); // Добавляем movieId в зависимости useEffect
+  }, [movieId]); 
 
   return (
     <div className={css.container}>
@@ -37,7 +37,7 @@ const MovieCast = () => {
                 className={css.actorPhoto}
                 src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`}
                 alt={`Photo of ${actor.name}`}
-                onError={(e) => e.target.src = '/path/to/placeholder-image.jpg'} // Замена изображения по умолчанию
+                onError={(e) => e.target.src = '/path/to/placeholder-image.jpg'} 
               />
               <h4 className={css.actorName}>{actor.name}</h4>
               <p className={css.actorRole}>Role: {actor.character}</p>

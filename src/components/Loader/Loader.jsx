@@ -11,7 +11,7 @@ const Loader = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh", // Центрирование по вертикали
+        height: "100vh", 
       }}
       colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
     />
